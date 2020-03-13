@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class DigitalClock extends StatefulWidget {
   @override
@@ -29,13 +32,13 @@ class _DigitalClockState extends State<DigitalClock> {
   }
 
   Widget build(BuildContext context) {
+    final time = DateFormat('jm').format(_dateTime);
     return Container(
       child: Text(
-          _dateTime.hour.toString() + ':' + _dateTime.minute.toString(),
-        style: TextStyle(
-            fontFamily: 'Bellota Text',
-            fontWeight: FontWeight.w300,
-          fontSize: 40,
+         time,
+        style: GoogleFonts.raleway(
+          fontSize: 48,
+          fontWeight: FontWeight.w300,
         ),
       ),
     );

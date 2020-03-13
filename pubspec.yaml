@@ -17,6 +17,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  google_fonts: ^0.3.9
+  intl: ^0.16.1
   flutter:
     sdk: flutter
 
@@ -56,15 +58,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-     - family: Bellota Text
-       fonts:
-         - asset: fonts/BellotaText-Regular.ttf
-           weight: 400
-         - asset: fonts/BellotaText-Light.ttf
-           weight: 300
-         - asset: fonts/BellotaText-Bold.ttf
-           weight: 700
+#  fonts:
+#     - family: Bellota Text
+#       fonts:
+#         - asset: fonts/BellotaText-Regular.ttf
+#           weight: 400
+#         - asset: fonts/BellotaText-Light.ttf
+#           weight: 300
+#         - asset: fonts/BellotaText-Bold.ttf
+#           weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
