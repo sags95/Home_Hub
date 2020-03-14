@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class DigitalClock extends StatefulWidget {
   @override
   _DigitalClockState createState() => _DigitalClockState();
