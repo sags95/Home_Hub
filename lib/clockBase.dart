@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:homehub/Widgets/digital_clock.dart';
-import 'keys.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:homehub/Models/background_image.dart';
 
-class ClockBase extends StatelessWidget {
-  //final NetworkImage backgroundPic = null;
+class ClockBase extends StatefulWidget {
+
+  @override
+  _ClockBaseState createState() => _ClockBaseState();
+}
+
+class _ClockBaseState extends State<ClockBase> {
+
+  String imgUrl;
+
+  void getBackgroundImg() async{
+    var img = await BackgroundImage().getUnsplashPic();
+    setState(() {
+      imgUrl = img;
+    });
+    print(img);
+
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    getBackgroundImg();
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    Future getUnsplashPic() async {
-      String url = 'https://api.unsplash.com/photos/random/?client_id=' + unsplashAPI;
-      http.Response response = await http.get(url);
-      if (response.statusCode == 200){
-        var decodedData = jsonDecode(response.body);
-        print(decodedData[0]['id']);
-      }
-    }
-
-    getUnsplashPic();
-
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          //TODO: Parse and set image on background
-          image: NetworkImage('https://api.unsplash.com/photos/random/?client_id=' + unsplashAPI)
+          image: NetworkImage('$imgUrl'),
         ),
       ),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         floatingActionButton: FloatingActionButton(
           onPressed: (){},
           child: Icon(
